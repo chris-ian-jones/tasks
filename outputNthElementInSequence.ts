@@ -1,5 +1,3 @@
-// An = A(n-1) + A(n-2) for all n < 2
-
 // You are given A1 and A2, as well as the index = n
 
 // A1 === first number
@@ -16,3 +14,15 @@
 // A5 = A4 + A3 = 5 + 3 = 8
 // A6 = A5 + A4 = 8 + 5 = 13
 // A7 = A6 + A5 = 13 + 8 = 21
+
+// pseudocode
+
+// - declare function with a string input
+// - split the string input into array of string elements
+// - declare constants for A1, A2, and n inputs by parsing each element in split array
+// - declare placeholder array
+// - push A1 and A2 into first positions of placeholder array
+// - create a for loop to push in the next number in sequence at end of Array
+//   - loop will start with pushing in third number and will continue until the nth number is pushed in, then stop
+//   - in each loop, the number to be pushed will be calculated by taking the current last number element in the array, and adding to it the number element with the index one lower than it (to the left of it)
+// - after the for loop has finished, function to return the last number element in the placeholder array
