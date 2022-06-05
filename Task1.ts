@@ -26,3 +26,21 @@
 //   - loop will start with pushing in third number and will continue until the nth number is pushed in, then stop
 //   - in each loop, the number to be pushed will be calculated by taking the current last number element in the array, and adding to it the number element with the index one lower than it (to the left of it)
 // - after the for loop has finished, function to return the last number element in the placeholder array
+
+function outputNthElementInSequence(input:string) {
+  const splitInputArr = input.split(' ');
+  const A1:number = parseInt(splitInputArr[0]);
+  const A2:number = parseInt(splitInputArr[1]);
+  const n:number = parseInt(splitInputArr[2]);
+  
+  const numArr = [];
+  numArr.push(A1, A2);
+  
+  for (let i = 3; i <= n; i++) {
+    numArr.push((numArr[numArr.length - 1] + numArr[numArr.length - 2]));
+  };
+
+  return numArr[numArr.length - 1];
+}
+
+outputNthElementInSequence('1 2 5');
